@@ -78,6 +78,202 @@ func GetAntigravityModels() []*ModelInfo {
 	return cloneModelInfos(getModels().Antigravity)
 }
 
+// GetCodeBuddyModels returns the available models for CodeBuddy (Tencent).
+// These models are served through the copilot.tencent.com API.
+func GetCodeBuddyModels() []*ModelInfo {
+	now := int64(1748044800) // 2025-05-24
+	return []*ModelInfo{
+		{
+			ID:                  "auto",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "Auto",
+			Description:         "Automatic model selection via CodeBuddy",
+			ContextLength:       128000,
+			MaxCompletionTokens: 32768,
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+		{
+			ID:                  "glm-5v-turbo",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "GLM-5v Turbo",
+			Description:         "GLM-5v Turbo via CodeBuddy",
+			ContextLength:       200000,
+			MaxCompletionTokens: 32768,
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+		{
+			ID:                  "glm-5.1",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "GLM-5.1",
+			Description:         "GLM-5.1 via CodeBuddy",
+			ContextLength:       200000,
+			MaxCompletionTokens: 32768,
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+		{
+			ID:                  "glm-5.0-turbo",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "GLM-5.0 Turbo",
+			Description:         "GLM-5.0 Turbo via CodeBuddy",
+			ContextLength:       200000,
+			MaxCompletionTokens: 32768,
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+		{
+			ID:                  "glm-5.0",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "GLM-5.0",
+			Description:         "GLM-5.0 via CodeBuddy",
+			ContextLength:       200000,
+			MaxCompletionTokens: 32768,
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+		{
+			ID:                  "glm-4.7",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "GLM-4.7",
+			Description:         "GLM-4.7 via CodeBuddy",
+			ContextLength:       200000,
+			MaxCompletionTokens: 32768,
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+		{
+			ID:                  "minimax-m2.7",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "MiniMax M2.7",
+			Description:         "MiniMax M2.7 via CodeBuddy",
+			ContextLength:       200000,
+			MaxCompletionTokens: 32768,
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+		{
+			ID:                  "kimi-k2.5",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "Kimi K2.5",
+			Description:         "Kimi K2.5 via CodeBuddy",
+			ContextLength:       256000,
+			MaxCompletionTokens: 32768,
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+		{
+			ID:                  "kimi-k2-thinking",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "Kimi K2 Thinking",
+			Description:         "Kimi K2 Thinking via CodeBuddy",
+			ContextLength:       256000,
+			MaxCompletionTokens: 32768,
+			Thinking:            &ThinkingSupport{ZeroAllowed: true},
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+		{
+			ID:                  "deepseek-v3-2-volc",
+			Object:              "model",
+			Created:             now,
+			OwnedBy:             "tencent",
+			Type:                "codebuddy",
+			DisplayName:         "DeepSeek V3.2 (Volc)",
+			Description:         "DeepSeek V3.2 via CodeBuddy",
+			ContextLength:       128000,
+			MaxCompletionTokens: 32768,
+			SupportedEndpoints:  []string{"/chat/completions"},
+		},
+	}
+}
+
+// GetCodeBuddyAIModels returns the available models for CodeBuddy AI (www.codebuddy.ai IDE).
+func GetCodeBuddyAIModels() []*ModelInfo {
+	now := int64(1748044800)
+	return []*ModelInfo{
+		{
+			ID: "default-model", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "Default Model", Description: "Default model via CodeBuddy AI",
+			ContextLength: 128000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "gpt-5.4", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "GPT-5.4", Description: "GPT-5.4 via CodeBuddy AI",
+			ContextLength: 200000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "gpt-5.3-codex", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "GPT-5.3-Codex", Description: "GPT-5.3 Codex via CodeBuddy AI",
+			ContextLength: 200000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "gpt-5.2-codex", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "GPT-5.2-Codex", Description: "GPT-5.2 Codex via CodeBuddy AI",
+			ContextLength: 200000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "gpt-5.2", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "GPT-5.2", Description: "GPT-5.2 via CodeBuddy AI",
+			ContextLength: 200000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "gpt-5.1", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "GPT-5.1", Description: "GPT-5.1 via CodeBuddy AI",
+			ContextLength: 200000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "gpt-5.1-codex-max", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "GPT-5.1-Codex-Max", Description: "GPT-5.1 Codex Max via CodeBuddy AI",
+			ContextLength: 200000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "gemini-3.0-pro", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "Gemini-3.0-Pro", Description: "Gemini 3.0 Pro via CodeBuddy AI",
+			ContextLength: 200000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "gemini-3.0-flash", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "Gemini-3.0-Flash", Description: "Gemini 3.0 Flash via CodeBuddy AI",
+			ContextLength: 200000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "kimi-k2.5", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "Kimi-K2.5", Description: "Kimi K2.5 via CodeBuddy AI",
+			ContextLength: 256000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "deepseek-v3.2", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "DeepSeek-V3.2", Description: "DeepSeek V3.2 via CodeBuddy AI",
+			ContextLength: 128000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+		{
+			ID: "auto-chat", Object: "model", Created: now, OwnedBy: "codebuddy-ai",
+			Type: "codebuddy-ai", DisplayName: "Auto-Chat", Description: "Auto Chat via CodeBuddy AI",
+			ContextLength: 128000, MaxCompletionTokens: 32768, SupportedEndpoints: []string{"/chat/completions"},
+		},
+	}
+}
+
 // WithCodexBuiltins injects hard-coded Codex-only model definitions that should
 // not depend on remote models.json updates. Built-ins replace any matching IDs
 // already present in the provided slice.
